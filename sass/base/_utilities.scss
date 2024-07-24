@@ -1,0 +1,17 @@
+/* Helpers */
+// Background colors classes
+@each $bg-color,
+$color in $bg-color {
+    .bg-#{$bg-color} {
+        background: $color !important;
+    }
+}
+
+// Text colors classes
+@each $text-color,
+$color in $text-color {
+    .text-#{$text-color} {
+        color: $color !important;
+    }
+}
+

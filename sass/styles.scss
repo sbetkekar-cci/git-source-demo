@@ -1,0 +1,18 @@
+/* This stylesheet is the main stylesheet. 
+It is used only for importing partial sass files.
+DO NOT WRITE ANY CSS STYLINGS HERE */
+
+/* Vendors */
+@import "plugins/plugins";
+
+/* Default base files */
+@import "base/base";
+
+/* Layouts */
+@import "layout/layout";
+
+/* Modules Files */
+@import "modules/modules";
+
+/* Theme/Custom Files */
+@import "theme/theme";

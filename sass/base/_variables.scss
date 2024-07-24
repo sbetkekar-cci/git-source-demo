@@ -1,0 +1,62 @@
+/* Variables */
+
+// Font Family
+$lato: 'Lato', sans-serif;
+$font-primary: $lato;
+$font-secondary: $lato;
+
+// Colors
+$black: #000;
+$white: #fff;
+$blue-light: #9ED8FD;
+$blue-dark-100: #13426B;
+$purple: #001F3B;
+$pink: #F11162;
+$red:#870F54;
+$grey : #597D95;
+
+$grey-light : #F0F0F0;
+$grey-100 : #D9D9D9;
+$dark-brown : #282828;
+$orange : #F37121;
+$pine-green : #969696;
+$boulder : #757575;
+$blue :  #388DDD;
+$blue-100 : #1B6CB8;
+$blue-dark: #00557F;
+
+
+// Color helpers
+$color-primary: $dark-brown;
+$text-primary: $dark-brown;
+
+
+// Default font size
+$font-size-base:16px;
+
+// Font Weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 900;
+
+// Background Colors
+$bg-color:(
+    black: $black,
+    white: $white,
+    blue: $blue,
+    blue-dark: $blue-dark,
+    purple: $purple,
+    red: $red,
+    pink: $pink,
+    grey: $grey
+);
+
+// Text Colors
+$text-color: (
+    purple: $purple,
+    pink: $pink,
+    red: $red
+);
