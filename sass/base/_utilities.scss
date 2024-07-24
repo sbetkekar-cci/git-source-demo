@@ -15,3 +15,11 @@ $color in $text-color {
     }
 }
 
+//Font Weight Classes
+
+@each $text-font,
+$font in $text-font {
+    .text-#{$text-font} {
+        font-weight: $font !important;
+    }
+}

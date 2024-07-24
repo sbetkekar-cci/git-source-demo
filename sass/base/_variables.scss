@@ -1,62 +1,303 @@
-/* Variables */
+/* VARIABLES */
 
-// Font Family
-$lato: 'Lato', sans-serif;
-$font-primary: $lato;
-$font-secondary: $lato;
+/* Font Families */
+$opensans: 'Open Sans',
+sans-serif;
 
-// Colors
+/* fonts to be used by the entire site */
+$font-primary : $opensans;
+
+
+/* Colors */
 $black: #000;
-$white: #fff;
-$blue-light: #9ED8FD;
-$blue-dark-100: #13426B;
-$purple: #001F3B;
-$pink: #F11162;
-$red:#870F54;
-$grey : #597D95;
+$white: #ffffff;
+$blue: #149dcc;
+$blue-100: #ecfafc;
+$text-primary: #232323;
+$text-secondary: #767676;
+$grey-100: #f5f5f5;
+$grey-200: #ededed;
 
-$grey-light : #F0F0F0;
-$grey-100 : #D9D9D9;
-$dark-brown : #282828;
-$orange : #F37121;
-$pine-green : #969696;
-$boulder : #757575;
-$blue :  #388DDD;
-$blue-100 : #1B6CB8;
-$blue-dark: #00557F;
-
-
-// Color helpers
-$color-primary: $dark-brown;
-$text-primary: $dark-brown;
-
-
-// Default font size
+//base font size
 $font-size-base:16px;
 
-// Font Weights
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-medium: 500;
-$font-weight-semi-bold: 600;
-$font-weight-bold: 700;
-$font-weight-extra-bold: 900;
+/* Paragraphs fontsize */
+$font-size-para: 18px;
 
-// Background Colors
-$bg-color:(
-    black: $black,
+/* Font Weight */
+$font-weight-light: 300;
+/*$light*/
+$font-weight-normal: 400;
+/*$regular*/
+$font-weight-semibold: 600;
+/*$semibold*/
+$font-weight-bold: 700;
+/*$bold*/
+//base font size
+$font-size-base:16px;
+
+/* Font Weight */
+$font-weight-normal: 400;
+/*$regular*/
+$font-weight-medium: 500;
+/*$medium*/
+$font-weight-semibold: 600;
+/*$semi bold*/
+
+/* HELPERS */
+
+/* background Colors */
+
+$bg-color:(black: $black,
     white: $white,
     blue: $blue,
-    blue-dark: $blue-dark,
-    purple: $purple,
-    red: $red,
-    pink: $pink,
-    grey: $grey
+    blue-100: $blue-100,
+    grey-100: $grey-100,
 );
+/* Text Font weight */
+$text-font:(font-normal: $font-weight-normal,
+    font-semibold: $font-weight-semibold);
 
-// Text Colors
-$text-color: (
-    purple: $purple,
-    pink: $pink,
-    red: $red
-);
+// Spacing Margin
+// You can add more entries to the $spacers map, should you need more variation.
+
+// Default margin 
+
+$margin: () !default;
+$margin: map-merge((), $margin);
+
+$margin-top: () !default;
+$margin-top: map-merge((), $margin-top);
+
+$margin-left: () !default;
+$margin-left: map-merge((
+        /*15:15px*/
+    ), $margin-left);
+
+$margin-bottom: () !default;
+$margin-bottom: map-merge((
+        /*24:24px*/
+    ), $margin-bottom);
+
+$margin-right: () !default;
+$margin-right: map-merge((
+        /*25:25px*/
+    ), $margin-right);
+
+
+
+// Small devices margin (landscape phones, 576px and up)
+
+$margin-sm: () !default;
+$margin-sm: map-merge((
+        /*1:1px*/
+    ), $margin-sm);
+
+$margin-sm-top: () !default;
+$margin-sm-top: map-merge((
+        /*2:2px*/
+    ), $margin-sm-top);
+
+$margin-sm-left: () !default;
+$margin-sm-left: map-merge((
+        /*3:3px*/
+    ), $margin-sm-left);
+
+$margin-sm-bottom: () !default;
+$margin-sm-bottom: map-merge((
+        /*4:4px*/
+    ), $margin-sm-bottom);
+
+$margin-sm-right: () !default;
+$margin-sm-right: map-merge((
+        /*14:14px*/
+    ), $margin-sm-right);
+
+
+// Medium devices margin  (tablets, 768px and up)
+
+$margin-md: () !default;
+$margin-md: map-merge((), $margin-md);
+
+$margin-md-top: () !default;
+$margin-md-top: map-merge((), $margin-md-top);
+
+$margin-md-left: () !default;
+$margin-md-left: map-merge((), $margin-md-left);
+
+$margin-md-bottom: () !default;
+$margin-md-bottom: map-merge((
+        /*25:25px*/
+    ), $margin-md-bottom);
+
+$margin-md-right: () !default;
+$margin-md-right: map-merge((), $margin-md-left);
+
+// Large devices margin (desktops, 992px and up)
+
+$margin-lg: () !default;
+$margin-lg: map-merge((), $margin-lg);
+
+$margin-lg-top: () !default;
+$margin-lg-top: map-merge((), $margin-lg-top);
+
+$margin-lg-left: () !default;
+$margin-lg-left: map-merge((), $margin-lg-left);
+
+$margin-lg-bottom: () !default;
+$margin-lg-bottom: map-merge((), $margin-lg-bottom);
+
+$margin-lg-right: () !default;
+$margin-lg-right: map-merge((), $margin-lg-right);
+
+// Extra large devices margin (large desktops, 1200px and up)
+
+$margin-xl: () !default;
+$margin-xl: map-merge((), $margin-xl);
+
+$margin-xl-top: () !default;
+$margin-xl-top: map-merge((
+        /*30:30px*/
+    ), $margin-xl-top);
+
+$margin-xl-left: () !default;
+$margin-xl-left: map-merge((), $margin-xl-left);
+
+$margin-xl-bottom: () !default;
+$margin-xl-bottom: map-merge((
+        /*12:12px*/
+    ), $margin-xl-bottom);
+
+$margin-xl-right: () !default;
+$margin-xl-right: map-merge((), $margin-xl-right);
+
+// Spacing Padding
+// You can add more entries to the $spacers map, should you need more variation.
+
+// Default $padding
+
+$padding: () !default;
+$padding: map-merge((
+        /*5:5px*/
+    ), $padding);
+
+$padding-top: () !default;
+$padding-top: map-merge((
+        /*40:40px*/
+    ), $padding-top);
+
+$padding-left: () !default;
+$padding-left: map-merge((
+        /*15:15px*/
+    ), $padding-left);
+
+$padding-bottom: () !default;
+$padding-bottom: map-merge((
+        /*40:40px*/
+    ), $padding-bottom);
+
+$padding-right: () !default;
+$padding-right: map-merge((
+        /*25:25px*/
+    ), $padding-right);
+
+
+
+// Small devices Padding (landscape phones, 576px and up)
+
+$padding-sm: () !default;
+$padding-sm: map-merge((
+        /*1:1px*/
+    ), $padding-sm);
+
+$padding-sm-top: () !default;
+$padding-sm-top: map-merge((
+        /*2:2px*/
+    ), $padding-sm-top);
+
+$padding-sm-left: () !default;
+$padding-sm-left: map-merge((
+        /*3:3px*/
+    ), $padding-sm-left);
+
+$padding-sm-bottom: () !default;
+$padding-sm-bottom: map-merge((
+        /*4:4px*/
+    ), $padding-sm-bottom);
+
+$padding-sm-right: () !default;
+$padding-sm-right: map-merge((
+        /*14:14px*/
+    ), $padding-sm-right);
+
+
+// Medium devices Padding  (tablets, 768px and up)
+
+$padding-md: () !default;
+$padding-md: map-merge((
+        /*1:1px*/
+    ), $padding-md);
+
+$padding-md-top: () !default;
+$padding-md-top: map-merge((
+        /*1:1px*/
+    ), $padding-md-top);
+
+$padding-md-left: () !default;
+$padding-md-left: map-merge((
+        /*1:1px*/
+    ), $padding-md-left);
+
+$padding-md-bottom: () !default;
+$padding-md-bottom: map-merge((
+        /*1:1px*/
+    ), $padding-md-bottom);
+
+$padding-md-right: () !default;
+$padding-md-right: map-merge((
+        /*1:1px*/
+    ), $padding-md-left);
+
+// Large devices Padding (desktops, 992px and up)
+
+$padding-lg: () !default;
+$padding-lg: map-merge((
+        /*1:1px*/
+    ), $padding-lg);
+
+$padding-lg-top: () !default;
+$padding-lg-top: map-merge((
+        /*1:1px*/
+    ), $padding-lg-top);
+
+$padding-lg-left: () !default;
+$padding-lg-left: map-merge((
+        /*1:1px*/
+    ), $padding-lg-left);
+
+$padding-lg-bottom: () !default;
+$padding-lg-bottom: map-merge((
+        /*1:1px*/
+    ), $padding-lg-bottom);
+
+$padding-lg-right: () !default;
+$padding-lg-right: map-merge((
+        /*1:1px*/
+    ), $padding-lg-right);
+
+// Extra large devices Padding (large desktops, 1200px and up)
+
+$padding-xl: () !default;
+$padding-xl: map-merge((1:1px), $padding-xl);
+
+$padding-xl-top: () !default;
+$padding-xl-top: map-merge((2:2px), $padding-xl-top);
+
+$padding-xl-left: () !default;
+$padding-xl-left: map-merge((3:3px), $padding-xl-left);
+
+$padding-xl-bottom: () !default;
+$padding-xl-bottom: map-merge((4:4px), $padding-xl-bottom);
+
+$padding-xl-right: () !default;
+$padding-xl-right: map-merge((5:5px), $padding-xl-right);

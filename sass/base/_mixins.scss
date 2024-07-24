@@ -1,21 +1,938 @@
-/* Mixins */
+/* MIXINS */
 
 /* Mixin for font size */
 @function calculateRem($size) {
-    $remSize: $size / 16px;
-    @return $remSize * 1rem;
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
 }
 
 @mixin font-size($size) {
-    font-size: $size;
-    font-size: calculateRem($size);
+  font-size: $size;
+  font-size: calculateRem($size);
 }
 
-/* Vendor Prefix */
-@mixin prefix($property, $value) {
-    -webkit-#{$property}: $value;
-       -moz-#{$property}: $value;
-        -ms-#{$property}: $value;
-         -o-#{$property}: $value;
-            #{$property}: $value;
+// stylelint-disable declaration-no-important
+
+// Mixin is for default Margin
+
+// Mixin is for default margin all side (landscape phones, 576px and up)
+@each $prop, $abbrev in (margin: m) {
+  @each $size, $length in $margin {
+
+    // Convert the baseline into rems
+    $baseline_rem: ($font-size-base / 1rem);
+
+    .#{$abbrev}-#{$size} { 
+      #{$prop}: $length / $baseline_rem !important; 
+      #{$prop}: $length !important;
+    }
+  }
+}
+
+// Mixin is for default top-margin (landscape phones, 576px and up)
+@each $prop, $abbrev in (margin: m) {
+    @each $size, $length in $margin-top {
+
+        // Convert the baseline into rems
+        $baseline_rem: ($font-size-base / 1rem);
+
+        .#{$abbrev}t-#{$size},
+        .#{$abbrev}y-#{$size} {
+            #{$prop}-top: $length / $baseline_rem !important;
+            #{$prop}-top: $length !important;
+        }
+    }
+}
+
+// Mixin is for default left-margin (landscape phones, 576px and up)
+@each $prop, $abbrev in (margin: m) {
+    @each $size, $length in $margin-left {
+
+        // Convert the baseline into rems
+        $baseline_rem: ($font-size-base / 1rem);
+
+        .#{$abbrev}l-#{$size},
+        .#{$abbrev}x-#{$size} {
+            #{$prop}-left: $length / $baseline_rem !important;
+            #{$prop}-left: $length !important;
+        }
+    }
+}
+
+// Mixin is for default Bottom-margin (landscape phones, 576px and up)
+@each $prop, $abbrev in (margin: m) {
+    @each $size, $length in $margin-bottom {
+
+        // Convert the baseline into rems
+        $baseline_rem: ($font-size-base / 1rem);
+
+        .#{$abbrev}b-#{$size},
+        .#{$abbrev}y-#{$size} {
+            #{$prop}-bottom: $length / $baseline_rem !important;
+            #{$prop}-bottom: $length !important;
+        }
+    }
+}
+
+// Mixin is for default right-margin (landscape phones, 576px and up)
+@each $prop, $abbrev in (margin: m) {
+    @each $size, $length in $margin-right {
+
+        // Convert the baseline into rems
+        $baseline_rem: ($font-size-base / 1rem);
+
+        .#{$abbrev}r-#{$size},
+        .#{$abbrev}x-#{$size} {
+            #{$prop}-right: $length / $baseline_rem !important;
+            #{$prop}-right: $length !important;
+        }
+    }
+}
+
+// Margin Small devices
+
+// Mixin is for Small devices margin all side (landscape phones, 576px and up)
+@include media-breakpoint-up(sm) {
+    $infix: breakpoint-infix(sm);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-sm {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}#{$infix}-#{$size} {
+                #{$prop}: $length / $baseline_rem !important;
+                #{$prop}: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Small devices top-margin (landscape phones, 576px and up)
+@include media-breakpoint-up(sm) {
+    $infix: breakpoint-infix(sm);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-sm-top {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}t#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-top: $length / $baseline_rem !important;
+                #{$prop}-top: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Small devices left-margin (landscape phones, 576px and up)
+@include media-breakpoint-up(sm) {
+    $infix: breakpoint-infix(sm);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-sm-left {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}l#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-left: $length / $baseline_rem !important;
+                #{$prop}-left: $length !important;
+            }
+        } 
+    }
+}
+
+// Mixin is for Small devices Bottom-margin (landscape phones, 576px and up)
+@include media-breakpoint-up(sm) {
+    $infix: breakpoint-infix(sm);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-sm-bottom {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}b#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-bottom: $length / $baseline_rem !important;
+                #{$prop}-bottom: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Small devices right-margin (landscape phones, 576px and up)
+@include media-breakpoint-up(sm) {
+    $infix: breakpoint-infix(sm);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-sm-right {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+
+            .#{$abbrev}r#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-right: $length / $baseline_rem !important;
+                #{$prop}-right: $length !important;
+            }
+        }
+    }
+}
+
+// Margin Medium devices
+
+// Mixin is for Medium devices margin all side (tablets, 768px and up)
+@include media-breakpoint-up(md) {
+    $infix: breakpoint-infix(md);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-md {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}#{$infix}-#{$size} {
+                #{$prop}: $length / $baseline_rem !important;
+                #{$prop}: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Medium devices top-margin (tablets, 768px and up)
+@include media-breakpoint-up(md) {
+    $infix: breakpoint-infix(md);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-md-top {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}t#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-top: $length / $baseline_rem !important;
+                #{$prop}-top: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Medium devices left-margin (tablets, 768px and up)
+@include media-breakpoint-up(md) {
+    $infix: breakpoint-infix(md);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-md-left {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}l#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-left: $length / $baseline_rem !important;
+                #{$prop}-left: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Medium devices Bottom-margin (tablets, 768px and up)
+@include media-breakpoint-up(md) {
+    $infix: breakpoint-infix(md);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-md-bottom {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}b#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-bottom: $length / $baseline_rem !important;
+                #{$prop}-bottom: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Medium devices right-margin (tablets, 768px and up)
+@include media-breakpoint-up(md) {
+    $infix: breakpoint-infix(md);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-md-right {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+
+            .#{$abbrev}r#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-right: $length / $baseline_rem !important;
+                #{$prop}-right: $length !important;
+            }
+        }
+    }
+}
+
+// Margin Large devices
+
+// Mixin is for Large devices margin all side (desktops, 992px and up)
+@include media-breakpoint-up(lg) {
+    $infix: breakpoint-infix(lg);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-lg {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}#{$infix}-#{$size} {
+                #{$prop}: $length / $baseline_rem !important;
+                #{$prop}: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Large devices top-margin (desktops, 992px and up)
+@include media-breakpoint-up(lg) {
+    $infix: breakpoint-infix(lg);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-lg-top {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}t#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-top: $length / $baseline_rem !important;
+                #{$prop}-top: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Large devices left-margin (desktops, 992px and up)
+@include media-breakpoint-up(lg) {
+    $infix: breakpoint-infix(lg);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-lg-left {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}l#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-left: $length / $baseline_rem !important;
+                #{$prop}-left: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Large devices Bottom-margin (desktops, 992px and up)
+@include media-breakpoint-up(lg) {
+    $infix: breakpoint-infix(lg);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-lg-bottom {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}b#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-bottom: $length / $baseline_rem !important;
+                #{$prop}-bottom: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Large devices right-margin (desktops, 992px and up)
+@include media-breakpoint-up(lg) {
+    $infix: breakpoint-infix(lg);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-lg-right {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+
+            .#{$abbrev}r#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-right: $length / $baseline_rem !important;
+                #{$prop}-right: $length !important;
+            }
+        }
+    }
+}
+
+// Margin Extra Large devices
+
+// Mixin is for Extra large devices margin all side (large desktops, 1200px and up)
+@include media-breakpoint-up(xl) {
+    $infix: breakpoint-infix(xl);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-xl {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}#{$infix}-#{$size} {
+                #{$prop}: $length / $baseline_rem !important;
+                #{$prop}: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Extra large devices top-margin (large desktops, 1200px and up)
+@include media-breakpoint-up(xl) {
+    $infix: breakpoint-infix(xl);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-xl-top {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}t#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-top: $length / $baseline_rem !important;
+                #{$prop}-top: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Extra Large devices left-margin (large desktops, 1200px and up)
+@include media-breakpoint-up(xl) {
+    $infix: breakpoint-infix(xl);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-xl-left {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}l#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-left: $length / $baseline_rem !important;
+                #{$prop}-left: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Extra Large devices Bottom-margin (large desktops, 1200px and up)
+@include media-breakpoint-up(xl) {
+    $infix: breakpoint-infix(xl);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-xl-bottom {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}b#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-bottom: $length / $baseline_rem !important;
+                #{$prop}-bottom: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Extra Large devices right-margin (large desktops, 1200px and up)
+@include media-breakpoint-up(xl) {
+    $infix: breakpoint-infix(xl);
+
+    @each $prop, $abbrev in (margin: m) {
+        @each $size, $length in $margin-xl-right {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+
+            .#{$abbrev}r#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-right: $length / $baseline_rem !important;
+                #{$prop}-right: $length !important;
+            }
+        }
+    }
+}
+
+
+
+// Padding default
+
+
+// Mixin is for Padding all side (landscape phones, 576px and up)
+@each $prop, $abbrev in (padding: p) {
+    @each $size, $length in $padding {
+
+        // Convert the baseline into rems
+        $baseline_rem: ($font-size-base / 1rem);
+
+        .#{$abbrev}-#{$size} {
+            #{$prop}: $length / $baseline_rem !important;
+            #{$prop}: $length !important;
+        }
+    }
+}
+
+// Mixin is for default top-padding (landscape phones, 576px and up)
+@each $prop, $abbrev in (padding: p) {
+    @each $size, $length in $padding-top {
+
+        // Convert the baseline into rems
+        $baseline_rem: ($font-size-base / 1rem);
+
+        .#{$abbrev}t-#{$size},
+        .#{$abbrev}y-#{$size} {
+            #{$prop}-top: $length / $baseline_rem !important;
+            #{$prop}-top: $length !important;
+        }
+    }
+}
+
+// Mixin is for default left-padding (landscape phones, 576px and up)
+@each $prop, $abbrev in (padding: p) {
+    @each $size, $length in $padding-left {
+
+        // Convert the baseline into rems
+        $baseline_rem: ($font-size-base / 1rem);
+
+        .#{$abbrev}l-#{$size},
+        .#{$abbrev}x-#{$size} {
+            #{$prop}-left: $length / $baseline_rem !important;
+            #{$prop}-left: $length !important;
+        }
+    }
+}
+
+// Mixin is for default Bottom-padding (landscape phones, 576px and up)
+@each $prop, $abbrev in (padding: p) {
+    @each $size, $length in $padding-bottom {
+
+        // Convert the baseline into rems
+        $baseline_rem: ($font-size-base / 1rem);
+
+        .#{$abbrev}b-#{$size},
+        .#{$abbrev}y-#{$size} {
+            #{$prop}-bottom: $length / $baseline_rem !important;
+            #{$prop}-bottom: $length !important;
+        }
+    }
+}
+
+// Mixin is for default right-padding (landscape phones, 576px and up)
+@each $prop, $abbrev in (padding: p) {
+    @each $size, $length in $padding-right {
+
+        // Convert the baseline into rems
+        $baseline_rem: ($font-size-base / 1rem);
+
+        .#{$abbrev}r-#{$size},
+        .#{$abbrev}x-#{$size} {
+            #{$prop}-right: $length / $baseline_rem !important;
+            #{$prop}-right: $length !important;
+        }
+    }
+}
+
+
+// Padding Small devices
+
+// Mixin is for Small devices padding all side (landscape phones, 576px and up)
+@include media-breakpoint-up(sm) {
+    $infix: breakpoint-infix(sm);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-sm {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}#{$infix}-#{$size} {
+                #{$prop}: $length / $baseline_rem !important;
+                #{$prop}: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Small devices top-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(sm) {
+    $infix: breakpoint-infix(sm);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-sm-top {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}t#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-top: $length / $baseline_rem !important;
+                #{$prop}-top: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Small devices left-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(sm) {
+    $infix: breakpoint-infix(sm);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-sm-left {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}l#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-left: $length / $baseline_rem !important;
+                #{$prop}-left: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Small devices Bottom-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(sm) {
+    $infix: breakpoint-infix(sm);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-sm-bottom {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}b#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-bottom: $length / $baseline_rem !important;
+                #{$prop}-bottom: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Small devices right-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(sm) {
+    $infix: breakpoint-infix(sm);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-sm-right {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+
+            .#{$abbrev}r#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-right: $length / $baseline_rem !important;
+                #{$prop}-right: $length !important;
+            }
+        }
+    }
+}
+
+// Padding Medium devices
+
+// Mixin is for Medium devices padding all side (landscape phones, 576px and up)
+@include media-breakpoint-up(md) {
+    $infix: breakpoint-infix(md);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-md {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}#{$infix}-#{$size} {
+                #{$prop}: $length / $baseline_rem !important;
+                #{$prop}: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Medium devices top-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(md) {
+    $infix: breakpoint-infix(md);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-md-top {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}t#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-top: $length / $baseline_rem !important;
+                #{$prop}-top: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Medium devices left-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(md) {
+    $infix: breakpoint-infix(md);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-md-left {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}l#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-left: $length / $baseline_rem !important;
+                #{$prop}-left: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Medium devices Bottom-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(md) {
+    $infix: breakpoint-infix(md);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-md-bottom {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}b#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-bottom: $length / $baseline_rem !important;
+                #{$prop}-bottom: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Medium devices right-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(md) {
+    $infix: breakpoint-infix(md);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-md-right {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+
+            .#{$abbrev}r#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-right: $length / $baseline_rem !important;
+                #{$prop}-right: $length !important;
+            }
+        }
+    }
+}
+
+
+// Padding Large devices
+
+// Mixin is for Large devices padding all side (landscape phones, 576px and up)
+@include media-breakpoint-up(lg) {
+    $infix: breakpoint-infix(lg);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-lg {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}#{$infix}-#{$size} {
+                #{$prop}: $length / $baseline_rem !important;
+                #{$prop}: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Large devices top-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(lg) {
+    $infix: breakpoint-infix(lg);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-lg-top {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}t#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-top: $length / $baseline_rem !important;
+                #{$prop}-top: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Large devices left-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(lg) {
+    $infix: breakpoint-infix(lg);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-lg-left {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}l#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-left: $length / $baseline_rem !important;
+                #{$prop}-left: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Large devices Bottom-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(lg) {
+    $infix: breakpoint-infix(lg);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-lg-bottom {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}b#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-bottom: $length / $baseline_rem !important;
+                #{$prop}-bottom: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Large devices right-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(lg) {
+    $infix: breakpoint-infix(lg);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-lg-right {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+
+            .#{$abbrev}r#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-right: $length / $baseline_rem !important;
+                #{$prop}-right: $length !important;
+            }
+        }
+    }
+}
+
+
+// Padding Extra Large devices
+
+// Mixin is for Extra Large devices padding all side (landscape phones, 576px and up)
+@include media-breakpoint-up(xl) {
+    $infix: breakpoint-infix(xl);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-xl {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}#{$infix}-#{$size} {
+                #{$prop}: $length / $baseline_rem !important;
+                #{$prop}: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Extra Large devices top-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(xl) {
+    $infix: breakpoint-infix(xl);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-xl-top {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}t#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-top: $length / $baseline_rem !important;
+                #{$prop}-top: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Extra Large devices left-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(xl) {
+    $infix: breakpoint-infix(xl);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-xl-left {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}l#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-left: $length / $baseline_rem !important;
+                #{$prop}-left: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Extra Large devices Bottom-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(xl) {
+    $infix: breakpoint-infix(xl);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-xl-bottom {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+            .#{$abbrev}b#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-bottom: $length / $baseline_rem !important;
+                #{$prop}-bottom: $length !important;
+            }
+        }
+    }
+}
+
+// Mixin is for Extra Large devices right-padding (landscape phones, 576px and up)
+@include media-breakpoint-up(xl) {
+    $infix: breakpoint-infix(xl);
+
+    @each $prop, $abbrev in (padding: p) {
+        @each $size, $length in $padding-xl-right {
+            // Convert the baseline into rems
+            $baseline_rem: ($font-size-base / 1rem);
+
+
+            .#{$abbrev}r#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-right: $length / $baseline_rem !important;
+                #{$prop}-right: $length !important;
+            }
+        }
+    }
+}
+// 'rem' is a Sass mixin that converts pixel values to rem values
+// Returns 2 lines of code — regular pixel values and converted rem values 
+
+@mixin rem($property, $px_values) {
+	// Convert the baseline into rems
+	$baseline_rem: ($font-size-base / 1rem);
+	// Print the first line in pixel values
+	#{$property}: $px_values;
+	// If only one (numeric) value, return the property/value line for it.
+	@if type-of($px_values) == 'number' {
+		#{$property}: $px_values / $baseline_rem;
+	}
+	// If more than one value, create list & perform equations on each value
+	@else {
+		// Create an empty list that we can dump values into
+		$rem_values: ();
+		@each $value in $px_values {
+			// If the value is zero, return 0
+			@if $value == 0 { 
+				$rem_values: append($rem_values, $value); 
+			}
+			// If the value is not zero, convert it from px to rem
+			@else {
+				$rem_values: append($rem_values, ($value / $baseline_rem) );
+			}
+		}
+		// Return the property and its list of converted values
+		#{$property}: $rem_values;
+	}
 }

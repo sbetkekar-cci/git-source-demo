@@ -1,58 +1,35 @@
-/* Default styles */
-body {
-    font-family: $font-primary;
-    font-weight: $font-weight-normal;
-    color: $text-primary;
-    @include font-size($font-size-base);
+/* Base Stylings like ul, p, body, etc */
+
+/* Body & Html */
+body, html{
+	height:100%;
+	@include font-size($font-size-base);
+	color: $text-primary;
+	font-family: $font-primary;
+	-webkit-overflow-scrolling: touch;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;	
 }
 
-p,
-ul,
-li,
-ol,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    padding: 0;
-    margin: 0;
+a{
+	color: $text-primary;
 }
 
-ul,
-li {
-    list-style: none;
+/* Paragraphs */
+p{
+	@include font-size($font-size-para); 
 }
 
-button,
-button:focus {
-    box-shadow: none;
+/* Strong */
+strong, b{
+	font-weight:$font-weight-bold;
 }
 
-a {
-    color: $text-primary;
-    text-decoration: none;
-    cursor: pointer;
 
-    &:hover {
-        color: $text-primary;
-        text-decoration: none;
-    }
-}
-
-strong {
-    font-weight: $font-weight-bold;
-}
-
-img {
-    max-width: 100%;
-    color: transparent;
-    height: auto;
-
-    // Reset width and height for picture img tags
-    picture & {
-        width: auto;
-        height: auto;
+section{
+    button{
+        width: 155px;
+        height: 38px;
+        padding: 0 10px;
     }
 }
