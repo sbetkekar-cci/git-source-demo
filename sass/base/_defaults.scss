@@ -1,35 +1,60 @@
-/* Base Stylings like ul, p, body, etc */
-
-/* Body & Html */
-body, html{
-	height:100%;
-	@include font-size($font-size-base);
-	color: $text-primary;
-	font-family: $font-primary;
-	-webkit-overflow-scrolling: touch;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;	
+/* Default styles */
+body,
+html {
+    font-family: $font-primary;
+    @include text(14px, 20px, $font-weight-normal);
+    color: $black-100;
 }
 
-a{
-	color: $text-primary;
+p,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    color: $black-100;
+    margin: 0;
 }
 
 /* Paragraphs */
-p{
-	@include font-size($font-size-para); 
-}
+p {
+    @include text(14px, 22px, $font-weight-normal);
 
-/* Strong */
-strong, b{
-	font-weight:$font-weight-bold;
-}
+    @include media-breakpoint-up(lg) {
+        @include text(16px, 24px, $font-weight-normal);
 
-
-section{
-    button{
-        width: 155px;
-        height: 38px;
-        padding: 0 10px;
     }
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+button,
+button:focus {
+    box-shadow: none;
+    text-transform: uppercase;
+}
+
+a {
+    color: $grey;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        color: $grey;
+        text-decoration: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    color: transparent;
+    height: auto;
 }

@@ -1,38 +1,40 @@
 /* VARIABLES */
 
 /* Font Families */
-$opensans: 'Open Sans',
+$Inter: "Inter",
 sans-serif;
 
 /* fonts to be used by the entire site */
-$font-primary : $opensans;
+$font-primary : $Inter;
 
 
 /* Colors */
-$black: #000;
+$black: #000000;
+$black-100:#18191F;
+$black-200: #4D4D4D;
+$black-300: #263238;
 $white: #ffffff;
-$blue: #149dcc;
-$blue-100: #ecfafc;
-$text-primary: #232323;
-$text-secondary: #767676;
-$grey-100: #f5f5f5;
-$grey-200: #ededed;
+$white-100: #F5F7FA;
+$green: #4CAF4F;
+$grey: #717171;
 
 //base font size
-$font-size-base:16px;
+$font-size-base:14px;
 
 /* Paragraphs fontsize */
-$font-size-para: 18px;
+$font-size-para: 16px;
 
 /* Font Weight */
-$font-weight-light: 300;
-/*$light*/
+
 $font-weight-normal: 400;
 /*$regular*/
+$font-weight-medium: 500;
+/*$medium*/
 $font-weight-semibold: 600;
 /*$semibold*/
 $font-weight-bold: 700;
 /*$bold*/
+
 //base font size
 $font-size-base:16px;
 
@@ -50,13 +52,13 @@ $font-weight-semibold: 600;
 
 $bg-color:(black: $black,
     white: $white,
-    blue: $blue,
-    blue-100: $blue-100,
-    grey-100: $grey-100,
 );
-/* Text Font weight */
-$text-font:(font-normal: $font-weight-normal,
-    font-semibold: $font-weight-semibold);
+
+/* Text Colors */
+$text-color:(white: $white,
+    green: $green);
+
+
 
 // Spacing Margin
 // You can add more entries to the $spacers map, should you need more variation.
@@ -75,14 +77,10 @@ $margin-left: map-merge((
     ), $margin-left);
 
 $margin-bottom: () !default;
-$margin-bottom: map-merge((
-        /*24:24px*/
-    ), $margin-bottom);
+$margin-bottom: map-merge((0:0px, 40:40px), $margin-bottom);
 
 $margin-right: () !default;
-$margin-right: map-merge((
-        /*25:25px*/
-    ), $margin-right);
+$margin-right: map-merge((40:40px), $margin-right);
 
 
 
@@ -145,10 +143,10 @@ $margin-lg-left: () !default;
 $margin-lg-left: map-merge((), $margin-lg-left);
 
 $margin-lg-bottom: () !default;
-$margin-lg-bottom: map-merge((), $margin-lg-bottom);
+$margin-lg-bottom: map-merge((0:0px), $margin-lg-bottom);
 
 $margin-lg-right: () !default;
-$margin-lg-right: map-merge((), $margin-lg-right);
+$margin-lg-right: map-merge((0:0px), $margin-lg-right);
 
 // Extra large devices margin (large desktops, 1200px and up)
 
@@ -177,9 +175,7 @@ $margin-xl-right: map-merge((), $margin-xl-right);
 // Default $padding
 
 $padding: () !default;
-$padding: map-merge((
-        /*5:5px*/
-    ), $padding);
+$padding: map-merge((30:30px), $padding);
 
 $padding-top: () !default;
 $padding-top: map-merge((

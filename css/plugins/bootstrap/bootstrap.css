@@ -1,0 +1,18 @@
+/* Error: Can't find stylesheet to import.
+ *    ,
+ * 25 | @import "mixins/buttons";
+ *    |         ^^^^^^^^^^^^^^^^
+ *    '
+ *   sass\plugins\bootstrap\_mixins.scss 25:9    @import
+ *   sass\plugins\bootstrap\bootstrap.scss 12:9  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a    \2577 \a 25 \2502  @import \"mixins/buttons\";\d\a    \2502          ^^^^^^^^^^^^^^^^\a    \2575 \a   sass\\plugins\\bootstrap\\_mixins.scss 25:9    @import\a   sass\\plugins\\bootstrap\\bootstrap.scss 12:9  root stylesheet";
+}

@@ -1,1 +1,55 @@
 /* Header */
+.navbar-expand-lg {
+    .navbar-toggler {
+        .navbar-toggler-icon {
+            background-image: url("../images/style-images/toggle-icon.svg");
+            width: 15px;
+            height: 10px;
+        }
+
+        &.expanded {
+            .navbar-toggler-icon {
+                background-image: url("../images/style-images/cross-toggle.svg");
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .navbar-collapse {
+        @include media-breakpoint-down(lg) {
+            background-color: $white-100;
+            position: fixed;
+            left: 0;
+            top: 70px;
+            transition: opacity 0.2s ease;
+            z-index: 2;
+            padding: 30px 0;
+            opacity: 0;
+
+            &.show {
+                opacity: 1;
+            }
+        }
+
+        .navigation-menu {
+            .nav-link {
+                margin-bottom: 40px;
+
+                @include media-breakpoint-up(lg) {
+                    margin-right: 50px;
+                }
+            }
+        }
+
+        .nav-link {
+            @include text(16px, 24px, $font-weight-medium);
+            color: $black-100;
+            padding: 0;
+        }
+    }
+}
