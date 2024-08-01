@@ -2,19 +2,20 @@
 
 h1,
 .h1 {
-    @include text(40px, 51px, $font-weight-semibold);
+    @include text(44px, 56px, $font-weight-semibold);
 
     @include media-breakpoint-up(lg) {
-        @include text(50px, 61px, $font-weight-semibold);
+        @include text(64px, 76px, $font-weight-semibold);
     }
 }
 
 h2,
 .h2 {
     @include text(26px, 38px, $font-weight-medium);
+    color: black-200;
 
     @include media-breakpoint-up(lg) {
-        @include text(30px, 69px, $font-weight-medium);
+        @include text(36px, 44px, $font-weight-medium);
     }
 }
 

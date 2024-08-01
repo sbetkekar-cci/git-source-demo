@@ -52,13 +52,12 @@ $font-weight-semibold: 600;
 
 $bg-color:(black: $black,
     white: $white,
-);
+    white-100:$white-100);
 
 /* Text Colors */
-$text-color:(white: $white,
+$text-color:(black: $black,
+    black-200 : $black-200,
     green: $green);
-
-
 
 // Spacing Margin
 // You can add more entries to the $spacers map, should you need more variation.

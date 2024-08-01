@@ -1,1 +1,14 @@
 /* Home Page */
+/*Banner Section*/
+
+.banner {
+    padding: 35px 0 60px;
+
+    .button {
+        margin-top: 32px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: 96px 0;
+    }
+}

@@ -1,5 +1,32 @@
 /* Carousel/Slider */
 
 /* Carousel start */
+.carousel-indicators {
+    bottom: -70px;
+
+    [data-bs-target] {
+        width: 15px;
+        height: 15px;
+        background-color: rgba($green, 0.30);
+        border-radius: 50%;
+        opacity: 1;
+        border-top: 14px solid transparent;
+        border-bottom: 13px solid transparent;
+        margin: 0 5px;
+    }
+
+    .active {
+        background-color: $green;
+    }
+
+    @include media-breakpoint-up(lg) {
+        bottom: -100px;
+    }
+}
+
+
+.carousel-item {
+    transition: 0.5s all ease-in-out;
+}
 
 /* Carousel end */
