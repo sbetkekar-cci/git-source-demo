@@ -12,7 +12,7 @@ h1,
 h2,
 .h2 {
     @include text(26px, 38px, $font-weight-medium);
-    color: black-200;
+    color: $black-100;
 
     @include media-breakpoint-up(lg) {
         @include text(36px, 44px, $font-weight-medium);

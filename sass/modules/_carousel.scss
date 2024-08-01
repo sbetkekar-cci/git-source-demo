@@ -24,9 +24,50 @@
     }
 }
 
-
 .carousel-item {
     transition: 0.5s all ease-in-out;
+}
+
+#mobClientSlider {
+    .carousel-inner {
+        .carousel-item {
+            justify-content: space-between;
+
+            @include media-breakpoint-down(sm) {
+                >div {
+                    display: none;
+                }
+
+                >div:first-child {
+                    display: block;
+                }
+            }
+
+            &.active,
+            &-next,
+            &-prev {
+                display: flex;
+            }
+
+            @include media-breakpoint-up(sm) {
+
+                &-end.active,
+                &-next {
+                    transform: translateX(50%);
+                }
+
+                &-start.active,
+                &-prev {
+                    transform: translateX(-50%);
+                }
+            }
+
+            &-end,
+            &-start {
+                transform: translateX(0);
+            }
+        }
+    }
 }
 
 /* Carousel end */
