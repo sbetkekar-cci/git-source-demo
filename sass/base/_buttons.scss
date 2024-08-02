@@ -34,4 +34,12 @@ $val in $colors {
 .btn-primary {
     background-color: $green;
     @include btn;
+    transition: 1s ease-in;
+    border: 1px solid $green;
+
+    &hover {
+        border: 1px solid $green;
+        color: $green;
+        background-color: $white;
+    }
 }
