@@ -21,10 +21,11 @@ h2,
 
 h3,
 .h3 {
-    @include text(18px, 34px, $font-weight-medium);
+    @include text(20px, 28px, $font-weight-bold);
+    color: $black-200;
 
     @include media-breakpoint-up(lg) {
-        @include text(22px, 30px, $font-weight-medium);
+        @include text(28px, 36px, $font-weight-bold);
     }
 }
 

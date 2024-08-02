@@ -1,5 +1,26 @@
 /* Cards */
+$enable-rounded: true;
 
 .card {
-    padding: 16px 24px;
+    padding: 15px;
+    @include border-radius(8px);
+
+    img {
+        padding-bottom: 16px;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin-bottom: 20px;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: auto;
+        margin: 0 15px;
+        padding: 24px 32px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: 299px;
+    }
+
 }

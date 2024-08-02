@@ -44,4 +44,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Re-run the function if the window is resized
 	window.addEventListener('resize', adjustCarouselAutoplay);
+
+	//Card height
+	if (window.matchMedia('(min-width: 768px) and (max-width: 1200px)').matches) {
+		const contentElements = document.querySelectorAll(
+			'.community-type .card-text'
+		);
+		console.log(contentElements);
+		let maxHeight = 0;
+
+		// Calculate the max height
+		contentElements.forEach((element) => {
+			const elementHeight = element.offsetHeight;
+			if (elementHeight > maxHeight) {
+				maxHeight = elementHeight;
+			}
+		});
+
+		// Set the max height to all .content elements
+		contentElements.forEach((element) => {
+			element.style.height = `${maxHeight}px`;
+		});
+	}
 });

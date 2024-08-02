@@ -1,18 +1,20 @@
 /* MIXINS */
 
 /* Mixin for font size */
+
 @function calculateRem($size) {
-    $remSize: $size / 16px;
-    @return $remSize * 1rem;
+    $rootSize: 14px; // Use the actual root font size
+    @return $size / $rootSize;
 }
 
+
+/* Mixin for font size */
 @mixin font-size($size) {
-    font-size: $size;
+    font-size: $size; // Fallback for browsers that don't support rem
     font-size: calculateRem($size);
 }
 
 // Define font size, line-height ,font weight mixin (We define `null` as the default value for each argument)
-
 @mixin text($size: null, $lineHeight: null, $weight: null) {
     @if $size !=null {
         font-size: $size;
@@ -28,6 +30,15 @@
     }
 }
 
+@mixin border-radius($radius: $border-radius, $fallback-border-radius: false) {
+    @if $enable-rounded {
+        border-radius: valid-radius($radius);
+    }
+
+    @else if $fallback-border-radius !=false {
+        border-radius: $fallback-border-radius;
+    }
+}
 
 // stylelint-disable declaration-no-important
 

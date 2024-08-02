@@ -24,10 +24,6 @@
     }
 }
 
-.carousel-item {
-    transition: 0.5s all ease-in-out;
-}
-
 #mobClientSlider {
     .carousel-inner {
         .carousel-item {
@@ -53,12 +49,12 @@
 
                 &-end.active,
                 &-next {
-                    transform: translateX(50%);
+                    transform: translateX(25%);
                 }
 
                 &-start.active,
                 &-prev {
-                    transform: translateX(-50%);
+                    transform: translateX(-25%);
                 }
             }
 
