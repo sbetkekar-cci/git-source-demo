@@ -31,5 +31,16 @@
     .btn-primary {
         margin-top: 32px;
     }
+}
 
+.business-reinvent {
+    padding: 64px 0;
+
+    .counter-img-wrap {
+        padding-right: 10px;
+
+        @include media-breakpoint-up(sm) {
+            padding-right: 16px;
+        }
+    }
 }

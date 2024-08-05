@@ -66,4 +66,41 @@ document.addEventListener('DOMContentLoaded', function () {
 			element.style.height = `${maxHeight}px`;
 		});
 	}
+
+	//counter code
+
+	window.addEventListener('scroll', function onScroll() {
+		var place = window.scrollY || document.documentElement.scrollTop;
+		var alertOn = document.getElementById('businessReinvent').offsetTop - place;
+		console.log('place' + place);
+		console.log(alertOn);
+
+		if (place >= alertOn) {
+			console.log('alertOn');
+
+			const counters = document.querySelectorAll('.counter');
+
+			counters.forEach((counter) => {
+				counter.innerText = '0';
+
+				const updateCounter = () => {
+					const target = +counter.getAttribute('data-target');
+					const c = +counter.innerText.replace(/,/g, '');
+
+					const increment = target / 200;
+					console.log(increment);
+
+					if (c < target) {
+						counter.innerText = `${Math.ceil(c + increment).toLocaleString()}`;
+						setTimeout(updateCounter, 1);
+					} else {
+						counter.innerText = target.toLocaleString();
+					}
+				};
+
+				updateCounter();
+			});
+			window.removeEventListener('scroll', onScroll);
+		}
+	});
 });

@@ -69,13 +69,13 @@ $margin: () !default;
 $margin: map-merge((), $margin);
 
 $margin-top: () !default;
-$margin-top: map-merge((), $margin-top);
+$margin-top: map-merge((20:20px), $margin-top);
 
 $margin-left: () !default;
 $margin-left: map-merge((0:0px), $margin-left);
 
 $margin-bottom: () !default;
-$margin-bottom: map-merge((0:0px, 15:15px, 40:40px), $margin-bottom);
+$margin-bottom: map-merge((0:0px, 15:15px, 20:20px), $margin-bottom);
 
 $margin-right: () !default;
 $margin-right: map-merge((0:0px, 40:40px), $margin-right);
@@ -100,9 +100,7 @@ $margin-sm-left: map-merge((
     ), $margin-sm-left);
 
 $margin-sm-bottom: () !default;
-$margin-sm-bottom: map-merge((
-        /*4:4px*/
-    ), $margin-sm-bottom);
+$margin-sm-bottom: map-merge((40:40px), $margin-sm-bottom);
 
 $margin-sm-right: () !default;
 $margin-sm-right: map-merge((
@@ -132,10 +130,10 @@ $margin-md-right: map-merge((), $margin-md-left);
 // Large devices margin (desktops, 992px and up)
 
 $margin-lg: () !default;
-$margin-lg: map-merge((), $margin-lg);
+$margin-lg: map-merge((0:0px), $margin-lg);
 
 $margin-lg-top: () !default;
-$margin-lg-top: map-merge((), $margin-lg-top);
+$margin-lg-top: map-merge((0:0px), $margin-lg-top);
 
 $margin-lg-left: () !default;
 $margin-lg-left: map-merge((), $margin-lg-left);
