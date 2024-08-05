@@ -75,7 +75,7 @@ $margin-left: () !default;
 $margin-left: map-merge((0:0px), $margin-left);
 
 $margin-bottom: () !default;
-$margin-bottom: map-merge((0:0px, 15:15px, 20:20px), $margin-bottom);
+$margin-bottom: map-merge((0:0px, 5:5px, 10:10px, 15:15px, 20:20px), $margin-bottom);
 
 $margin-right: () !default;
 $margin-right: map-merge((0:0px, 40:40px), $margin-right);
